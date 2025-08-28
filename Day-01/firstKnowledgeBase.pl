@@ -1,0 +1,13 @@
+animal(dog).
+fruit(kiwi).
+weapon(gun).
+hardware(keyboard).
+android_phone(samsung).
+male(kamal).
+student(john).
+black(elephant).
+shape(circle).
+vehicle(bus).
+vehicle(van).
+shape(square).
+male(ahmed).
