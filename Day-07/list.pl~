@@ -1,0 +1,8 @@
+
+%base case
+len([],0).
+len([_|T],N):-len(T,N1), N is N1+1.
+
+%summation
+
+sum([_|Tail], N,N2):- sum(Tail, N1, N3), N is N1+1, N2 is N2+N3.
