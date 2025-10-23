@@ -1,0 +1,83 @@
+%is operator -We can only use operations in one right side (operations)
+%left  side - equalant value.
+%
+%?- 8 is 3+5.
+%true.
+
+%?- X is abs(-8).
+%X = 8.
+
+%?- 5+3 = 3+5.
+%false.
+
+%?- 5+3 is 3+5.
+%false.
+
+%?- 5+3=:=3+5.
+%true.
+
+%?- 8=:=3
+%|    +5.
+%true.
+
+%?- 7 =:= 3.5 + 3.5.
+%true.
+
+%?- 7 is  3.5 + 3.5.
+%false.
+
+%=:= - aritmatically equal
+%we can use operations in both side using this operator.
+%?- 7 is  3.5 + 3.5.
+%false.  because the output should be 7.0
+%
+%
+%
+student(anu).
+student(bala).
+student(chris).
+
+print_students :- student(Name),
+    write(Name), nl,
+    fail. %force backtracking to find next student
+
+%
+%?- print_students.
+%anu
+%bala
+%chris
+%true.
+
+%removing the fail keyword and try again
+print_students1 :- student(Name),
+    write(Name), nl.
+
+%?- print_students1.
+%anu
+%true
+
+print_numbers(Low, High):-
+    between(Low, High, X),
+    write(X), nl,
+    fail.
+
+%?- print_numbers(10, 20).
+%10
+%11
+%12
+%13
+%14
+%15
+%16
+%17
+%18
+%19
+%20
+%false.
+
+print_numbers1(Low, High):-
+    between(Low, High, X),
+    write(X), nl.
+%?- print_numbers1(10,20).
+%10
+%true
