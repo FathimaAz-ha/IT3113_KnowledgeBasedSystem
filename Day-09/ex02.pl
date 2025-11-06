@@ -1,0 +1,38 @@
+born(jan, date(20,3,1977)).
+born(jeroen, date(2,2,1992)).
+born(joris, date(17,3,1995)).
+born(jelle, date(1,1,2004)).
+born(jesus, date(24,12,0)).
+born(joop, date(30,4,1989)).
+born(jannecke, date(17,3,1993)).
+born(jaap, date(16,11,1995)).
+
+year(Y,X):- born(X, date(_,_,Y)).
+%?- year(1995, Person).
+%Person = joris ;
+%Person = jaap.
+
+before(date(D1,M1,Y1), date(D2,M2,Y2)):-
+       (Y1 < Y2, !);
+       (M1<M2,Y1=Y2, !);
+       (D1<D2, M1=M2, Y1=Y2).
+
+%?- before(date(31,1,1990), date(7,7,1990)).
+%true.
+
+older(X,Y):- born(X, Date1),
+    born(Y, Date2),
+    before(Date1, Date2).
+
+%?- older(jannecke, X).
+%X = joris ;
+%X = jelle ;
+%X = jaap.
+
+% Recall that the set of prime numbers is {2,3,5,7,11,13,17,… } i.e., the
+% set%of numbers with exactly two divisors each (namely 1 and the number
+% itself). Write a Prolog predicate prime/1 to check whether given number
+% is prime.
+
+prime(X):-  (1 is X//X), (1 is X//1).
+

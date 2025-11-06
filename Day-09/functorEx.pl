@@ -1,0 +1,15 @@
+car(toyota, model(corolla), engine(1600), color(blue, white, yelolow)).
+car(honda, model(civic), engine(1800), color(red)).
+car(nissan, model(altima), engine(2000), color(black,blue, grey)).
+
+blue_Car(X):-  car(X, _,_,color(blue,_,_)); car(X, _, _ , color(_, blue, _));
+ car(X, _, _ , color(_, _ , blue)).
+
+%find the car blue color car
+% ?- car(X, _,_,color(blue,_,_)); car(X, _, _ , color(_, blue, _));
+% car(X, _, _ , color(_, _ , blue)).
+%X = toyota ;
+%X = nissan ;
+%false
+% or you can write a rule like the above and run the blue_Car query
+% directly

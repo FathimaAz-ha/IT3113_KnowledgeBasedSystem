@@ -5,3 +5,5 @@ analyse_list([H|_]):- write('This is the head of the list :'),write(H),nl.
 analyse_list([_|T]):- write('This is the tail of the list :'),write(T),nl.
 
 
+
+
