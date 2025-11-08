@@ -34,5 +34,18 @@ older(X,Y):- born(X, Date1),
 % itself). Write a Prolog predicate prime/1 to check whether given number
 % is prime.
 
-prime(X):-  (1 is X/X), (1 is X/1).
+%prime(X):-  (X/X =:= 1), (X>1), (X/1=:=X).
+
+%prime number logic - has to be divided by itself and number 1.
+% In programmig concept - logic is reducing the count of the for loop -
+% n/2 or root(n)
+
+prime(N):- N>1, \+ has_divisor(N,2).
+
+has_divisor(D,N):-
+       D*D<N,
+       N mod D =:= 0,
+       D1 is D+1,
+       has_divisor(D1,N).
+
 

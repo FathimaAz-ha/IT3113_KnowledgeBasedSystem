@@ -1,0 +1,15 @@
+prime(N):- N>1, \+ has_divisor(N,2).  %\+ - negation
+
+has_divisor(D,N):-
+       D*D<N,
+       N mod D =:= 0,
+       D1 is D+1,
+       has_divisor(D1,N).
+
+goldbach(N,(A+B)):- N>2,
+    N mod 2 =:= 0,
+    X is N//2,
+    between(1,X,A),
+    prime(A),
+    B= N-A,
+    prime(B), !.
