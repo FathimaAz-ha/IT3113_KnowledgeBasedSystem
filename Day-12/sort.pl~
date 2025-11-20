@@ -1,0 +1,16 @@
+student(ajay,32,0,football).
+student(mark, 40,0, neither).
+student(sara, 16,1,cricket).
+student(zaira, 34,1,cricket).
+student(sachin, 55, 0, neither).
+student(rahul, 45,0,cricket).
+student(pooja, 20,1, neither).
+student(smith, 15,0, cricket).
+student(laxmi, 55,1, football).
+student(michel, 15,0, football).
+
+
+distance((X1, Y1), (X2,Y2), D):-
+    X is X2 - X1,
+    Y is Y2 - Y1,
+    D is
